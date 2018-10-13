@@ -670,9 +670,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Pomodoro\\PomodoroTimer\\PomodoroTimer\\PomodoroTimer.csproj",
-      "projectName": "PomodoroTimer",
-      "projectPath": "D:\\Dev\\Pomodoro\\PomodoroTimer\\PomodoroTimer\\PomodoroTimer.csproj",
+      "projectUniqueName": "D:\\Dev\\Pomodoro\\PomodoroTimer\\PomodoroTimer\\PomodoroTimer_ConsoleApp.csproj",
+      "projectName": "PomodoroTimer_ConsoleApp",
+      "projectPath": "D:\\Dev\\Pomodoro\\PomodoroTimer\\PomodoroTimer\\PomodoroTimer_ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\Dev\\Pomodoro\\PomodoroTimer\\PomodoroTimer\\obj\\",
       "projectStyle": "PackageReference",
