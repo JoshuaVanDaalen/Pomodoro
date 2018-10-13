@@ -1,0 +1,11 @@
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\bin\Debug\netcoreapp2.0\PomodoroTimer.deps.json
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\bin\Debug\netcoreapp2.0\PomodoroTimer.runtimeconfig.json
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\bin\Debug\netcoreapp2.0\PomodoroTimer.runtimeconfig.dev.json
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\bin\Debug\netcoreapp2.0\PomodoroTimer.dll
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\bin\Debug\netcoreapp2.0\PomodoroTimer.pdb
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.csprojAssemblyReference.cache
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.csproj.CoreCompileInputs.cache
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.AssemblyInfoInputs.cache
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.AssemblyInfo.cs
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.dll
+D:\Dev\Pomodoro\PomodoroTimer\PomodoroTimer\obj\Debug\netcoreapp2.0\PomodoroTimer.pdb
