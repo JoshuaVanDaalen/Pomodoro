@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PomodoroTimer_WPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Pomodoro" Height="100" Width="300" Loaded="Window_Loaded">
     <Grid>
-        <Label Content="Timer" HorizontalAlignment="Left" Margin="210,177,0,0" VerticalAlignment="Top" Height="41" Width="171"/>
-
+        <Label x:Name="TimerLabel" Content="25:00" FontFamily="Segeo UI" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" ></Label>
     </Grid>
 </Window>
