@@ -25,11 +25,11 @@ namespace PomodoroTimer_WPFApp
             seconds.Interval = TimeSpan.FromSeconds(1);
 
             seconds.Tick += (_, a) =>
-            {
+            {                
                 if ((minutes <= 0) && (secondsduration == 0))
                 {
                     seconds.Stop();
-                    clock("00:00");
+                    //clock("00:00");
                 }
                 else if (secondsduration-- == 0)
                 {
@@ -38,8 +38,8 @@ namespace PomodoroTimer_WPFApp
                 }
                 else
                 {
-                    clock($"{(minutes + 1).ToString()}:00");
-                }
+                    clock($"{(minutes - 1).ToString()}:00");
+                }                
                 //Show displayed clock
                 if ((secondsduration.ToString().Length == 1) && (minutes.ToString().Length == 1))
                     clock($"0{ minutes.ToString()}:0{secondsduration.ToString()}");
@@ -54,7 +54,7 @@ namespace PomodoroTimer_WPFApp
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            TimerLabel.Content = "Hello World!";
+            //TimerLabel.Content = "Hello World!";
             Countdown(8, cur => TimerLabel.Content = cur.ToString());
         }
     }
