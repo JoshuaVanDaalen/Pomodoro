@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "PomodoroTimer_ConsoleApp/1.0.0": {
+        "runtime": {
+          "PomodoroTimer_ConsoleApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PomodoroTimer_ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
