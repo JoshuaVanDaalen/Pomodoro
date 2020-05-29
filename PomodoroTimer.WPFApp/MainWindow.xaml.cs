@@ -4,15 +4,13 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace PomodoroTimer_WPFApp
+namespace PomodoroTimer.WPFApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static Timer timer;
-
         public MainWindow()
         {
             InitializeComponent();

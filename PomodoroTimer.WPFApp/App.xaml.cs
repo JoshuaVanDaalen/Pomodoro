@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace PomodoroTimer_WPFApp
+namespace PomodoroTimer.WPFApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer\\PomodoroTimer.ConsoleApp.csproj",
+      "projectUniqueName": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer.ConsoleApp\\PomodoroTimer.ConsoleApp.csproj",
       "projectName": "PomodoroTimer.ConsoleApp",
-      "projectPath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer\\PomodoroTimer.ConsoleApp.csproj",
+      "projectPath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer.ConsoleApp\\PomodoroTimer.ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer\\obj\\",
+      "outputPath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer.ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

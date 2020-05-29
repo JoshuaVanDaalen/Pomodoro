@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NiH/LKvaMzkwhLgBhmEeDu3KNgnSrq1E8UnpbLpE5GS933YO9WydA9ml1fQLVkyRaEQTvIgNvp6NLe7z8EHIrw==",
+  "dgSpecHash": "md3hrc8/svMWPF3fCWIaWh8ewoCcmBYYBWGQwJdZCvAMOq40qCLjcn8eIu/gvRq9mcZbssFGLXQbUDHAIcl3Lw==",
   "success": true,
-  "projectFilePath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer\\PomodoroTimer.ConsoleApp.csproj",
+  "projectFilePath": "S:\\greeenSacrifice\\Pomodoro\\PomodoroTimer.ConsoleApp\\PomodoroTimer.ConsoleApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
