@@ -21,13 +21,14 @@ namespace PomodoroTimer.WPFApp
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Pomodoro();
+            Pomodoro(25);
         }
 
-        private void Pomodoro()
+        private void Pomodoro(int startingMinutes)
         {
             //
-            Countdown(10, cur => TimerLabel.Content = cur.ToString());
+            TimerLabel.Content = $"{startingMinutes}:00";
+            Countdown(startingMinutes, cur => TimerLabel.Content = cur.ToString());
         }
 
         void Countdown(int startTime, Action<string> clock)
@@ -43,6 +44,7 @@ namespace PomodoroTimer.WPFApp
             {
                 seconds--;
 
+                // If 0 seconds skip and just show minutes:00
                 if (minutes <= 0 && seconds == 0) // If the clock is at 0 stop counting down
                 {
                     timer.Stop();
@@ -59,10 +61,16 @@ namespace PomodoroTimer.WPFApp
                 else { } // Otherwise the clock is ticking
 
                 // Show displayed clock
-                if ((seconds < 10) && (minutes < 10))
+                if (seconds < 10 && minutes < 10)
                 {
                     // Append 0 at start of both minutes & seconds
                     clock($"0{minutes}:0{seconds}");
+                }
+
+                else if (minutes < 10 && minutes == 60)
+                {
+                    // Append 0 at start of minutes 
+                    clock($"0{minutes}:00");
                 }
                 else if (minutes < 10)
                 {
@@ -85,6 +93,11 @@ namespace PomodoroTimer.WPFApp
                     {
                         // Minutes have decreased and seconds are on 60
                         clock($"{minutes}:00");
+                    }
+                    else if (seconds == 59)
+                    {
+                        minutes--;
+                        clock($"{minutes}:{seconds}");
                     }
                     else
                     {
