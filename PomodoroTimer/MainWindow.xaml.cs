@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Threading;
 
-namespace PomodoroTimer.WPFApp
+namespace PomodoroTimer
 {
     public partial class MainWindow : Window
     {
@@ -29,7 +29,7 @@ namespace PomodoroTimer.WPFApp
         private void Pomodoro(int minutes)
         {
             timeSpan = TimeSpan.FromMinutes(minutes);
-            if (minutes != 25) timeSpan = timeSpan.Add(TimeSpan.FromSeconds(1));
+            if (count > 1) timeSpan = timeSpan.Add(TimeSpan.FromSeconds(1));
 
             dispatcherTimer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
@@ -66,7 +66,7 @@ namespace PomodoroTimer.WPFApp
                             break;
                         default:
                             SetNormalWindowState();
-                            TimerLabel.Content = "DONE";
+                            TimerLabel.Content = "Done";
                             break;
                     }
                 }
@@ -100,7 +100,6 @@ namespace PomodoroTimer.WPFApp
         {
             WindowState = WindowState.Maximized;
             TimerLabel.FontSize = 128;
-
         }
     }
 }

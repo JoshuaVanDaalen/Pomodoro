@@ -1,13 +1,12 @@
-﻿<Window x:Class="PomodoroTimer.WPFApp.MainWindow"
+﻿<Window x:Class="PomodoroTimer.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PomodoroTimer.WPFApp"
+        xmlns:local="clr-namespace:PomodoroTimer"
         mc:Ignorable="d"
         Title="Pomodoro" Height="39.5" Width="84.5" Loaded="Window_Loaded" ResizeMode="NoResize"
-        WindowStyle="None"
-        >
+        WindowStyle="None">
     <Grid Background="#333">
         <Label x:Name="TimerLabel" Content="00:00" FontFamily="Segeo UI" FontSize="32" 
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
