@@ -1,16 +1,18 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Timers;
 using System.Windows;
 using System.Windows.Threading;
 
 namespace PomodoroTimer.WPFApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        // After four pomodoros, take a longer break 
+        // Work Interval  = 25 minutes
+        // Break Interval = 5 minutes
+        // Rest Interval  = 30 minutes
+        DispatcherTimer dispatcherTimer;
+        TimeSpan timeSpan;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -22,90 +24,27 @@ namespace PomodoroTimer.WPFApp
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Pomodoro(25);
+            Pomodoro(5);
+            Pomodoro(25);
+            Pomodoro(5);
+            Pomodoro(25);
+            Pomodoro(5);
+            Pomodoro(25);
+            Pomodoro(30);
         }
 
-        private void Pomodoro(int startingMinutes)
+        private void Pomodoro(int minutes)
         {
-            //
-            TimerLabel.Content = $"{startingMinutes}:00";
-            Countdown(startingMinutes, cur => TimerLabel.Content = cur.ToString());
-        }
+            timeSpan = TimeSpan.FromMinutes(minutes);
 
-        void Countdown(int startTime, Action<string> clock)
-        {
-
-            int minutes = startTime;
-            int seconds = 60;
-
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-
-            timer.Tick += (_, a) =>
+            dispatcherTimer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
-                seconds--;
+                TimerLabel.Content = timeSpan.ToString(@"mm\:ss");
+                if (timeSpan == TimeSpan.Zero) dispatcherTimer.Stop();
+                timeSpan = timeSpan.Add(TimeSpan.FromSeconds(-1));
+            }, Application.Current.Dispatcher);
 
-                // If 0 seconds skip and just show minutes:00
-                if (minutes <= 0 && seconds == 0) // If the clock is at 0 stop counting down
-                {
-                    timer.Stop();
-                    clock($"00:00");
-                    return;
-                }
-
-                else if (seconds == 0) // If the clock has minutes left and has reached 0 seconds
-                {
-                    seconds = 60;
-                    minutes--;
-                }
-
-                else { } // Otherwise the clock is ticking
-
-                // Show displayed clock
-                if (seconds < 10 && minutes < 10)
-                {
-                    // Append 0 at start of both minutes & seconds
-                    clock($"0{minutes}:0{seconds}");
-                }
-
-                else if (minutes < 10 && minutes == 60)
-                {
-                    // Append 0 at start of minutes 
-                    clock($"0{minutes}:00");
-                }
-                else if (minutes < 10)
-                {
-                    // Append 0 at start of minutes 
-                    clock($"0{minutes}:{(seconds == 60 ? seconds - 1 : seconds)}");
-                }
-                else if (seconds < 10)
-                {
-                    // Append 0 at start of seconds
-                    clock($"{(minutes == startTime ? minutes - 1 : minutes)}:0{seconds}");
-                }
-                else
-                {
-                    if (minutes == startTime)
-                    {
-                        // Clock is ticking
-                        clock($"{minutes - 1}:{seconds}");
-                    }
-                    else if (seconds == 60)
-                    {
-                        // Minutes have decreased and seconds are on 60
-                        clock($"{minutes}:00");
-                    }
-                    else if (seconds == 59)
-                    {
-                        minutes--;
-                        clock($"{minutes}:{seconds}");
-                    }
-                    else
-                    {
-                        clock($"{minutes}:{seconds}");
-                    }
-                }
-            };
-            timer.Start();
+            dispatcherTimer.Start();
         }
     }
 }
