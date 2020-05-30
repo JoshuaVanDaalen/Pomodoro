@@ -59,17 +59,17 @@ namespace PomodoroTimer.WPFApp
                 else { } // Otherwise the clock is ticking
 
                 // Show displayed clock
-                if ((seconds.ToString().Length == 1) && (minutes.ToString().Length == 1))
+                if ((seconds < 10) && (minutes < 10))
                 {
                     // Append 0 at start of both minutes & seconds
                     clock($"0{minutes}:0{seconds}");
                 }
-                else if (minutes.ToString().Length == 1)
+                else if (minutes < 10)
                 {
                     // Append 0 at start of minutes 
                     clock($"0{minutes}:{(seconds == 60 ? seconds - 1 : seconds)}");
                 }
-                else if (seconds.ToString().Length == 1)
+                else if (seconds < 10)
                 {
                     // Append 0 at start of seconds
                     clock($"{(minutes == startTime ? minutes - 1 : minutes)}:0{seconds}");
