@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PomodoroTimer.WPFApp"
         mc:Ignorable="d"
-        Title="Pomodoro" Height="55" Width="135" Loaded="Window_Loaded" ResizeMode="NoResize"
+        Title="Pomodoro" Height="39.5" Width="84.5" Loaded="Window_Loaded" ResizeMode="NoResize"
+        WindowStyle="None"
         >
     <Grid Background="#333">
-        <Label x:Name="TimerLabel" Content="00:00" FontFamily="Segeo UI" FontSize="50" 
+        <Label x:Name="TimerLabel" Content="00:00" FontFamily="Segeo UI" FontSize="32" 
                HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
-               Foreground="Red" HorizontalAlignment="Left" VerticalAlignment="Top" >
+               Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" >
         </Label>
     </Grid>
 </Window>
