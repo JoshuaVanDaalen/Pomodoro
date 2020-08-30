@@ -41,31 +41,23 @@ namespace PomodoroTimer
                     switch (count)
                     {
                         case 8:
-                            RestInterval();
+                            SetWindowState(true);
+                            Pomodoro(30);
                             break;
                         case 7:
-                            WorkInterval();
+                        case 5:
+                        case 3:
+                            SetWindowState(false);
+                            Pomodoro(25);
                             break;
                         case 6:
-                            BreakInterval();
-                            break;
-                        case 5:
-                            WorkInterval();
-                            break;
                         case 4:
-                            BreakInterval();
-                            break;
-                        case 3:
-                            WorkInterval();
-                            break;
                         case 2:
-                            BreakInterval();
-                            break;
-                        case 1: // Shouldn't ever get to this case
-                            WorkInterval();
+                            SetWindowState(true);
+                            Pomodoro(5);
                             break;
                         default:
-                            SetNormalWindowState();
+                            SetWindowState(false);
                             TimerLabel.Content = "Done";
                             break;
                     }
@@ -76,30 +68,18 @@ namespace PomodoroTimer
             dispatcherTimer.Start();
         }
 
-        private void WorkInterval()
+        private void SetWindowState(bool maximized)
         {
-            SetNormalWindowState();
-            Pomodoro(25);
-        }
-        private void BreakInterval()
-        {
-            SetRestAndBreakWindowState();
-            Pomodoro(5);
-        }
-        private void RestInterval()
-        {
-            SetRestAndBreakWindowState();
-            Pomodoro(30);
-        }
-        private void SetNormalWindowState()
-        {
-            WindowState = WindowState.Normal;
-            TimerLabel.FontSize = 32;
-        }
-        private void SetRestAndBreakWindowState()
-        {
-            WindowState = WindowState.Maximized;
-            TimerLabel.FontSize = 128;
+            if (maximized)
+            {
+                WindowState = WindowState.Maximized;
+                TimerLabel.FontSize = 128;
+            }
+            else
+            {
+                WindowState = WindowState.Normal;
+                TimerLabel.FontSize = 32;
+            }
         }
     }
 }
